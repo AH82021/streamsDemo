@@ -6,6 +6,10 @@ public class Solution {
         System.out.println(malesOnly(Person.persons()));
         names(Person.persons()).forEach(System.out::println);
         sortedByIncomeDesc().forEach(System.out::println);
+
+        System.out.println("Distinct genders "+distinctGenders());
+        System.out.println("First three people on the list");
+        firstThreePeople().forEach(System.out::println);
     }
    // Filter the list of persons to include only males.
     static List<String> malesOnly(List<Person> people){
@@ -35,6 +39,26 @@ public class Solution {
                 .toList();
         return sortedList;
    }
+
+   //Find the distinct genders in the list of persons.
+
+    static List<Person.Gender> distinctGenders(){
+        List<Person.Gender> genders = Person.persons()
+                .stream()
+                .map(Person::getGender)
+                .distinct()
+                .toList();
+        return genders;
+    }
+    // To limit the list of persons to the first 3,
+    static List<Person> firstThreePeople(){
+        List<Person> top3 = Person.persons()
+                .stream()
+                .limit(3)
+                .toList();
+        return top3;
+    }
+
 
 
 }
