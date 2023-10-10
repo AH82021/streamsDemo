@@ -64,7 +64,7 @@ public class Person {
         Person jeff = new Person(2, "Jeff",
                 Gender.MALE,
                 LocalDate.of(
-                        1970, Month.JULY, 15), 7100.0);
+                        1970, Month.JULY, 15), 8700.0);
         Person donna = new Person(3, "Donna",
                 Gender.FEMALE,
                 LocalDate.of(
